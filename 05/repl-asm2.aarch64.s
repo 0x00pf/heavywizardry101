@@ -1,0 +1,65 @@
+	.text
+	.globl _start
+_start:
+	mov x0, 1
+	adr x1, prompt
+	mov x2, len
+	bl p4w_write
+	ldr x1, =input
+	
+	
+	mov x0, xzr
+	#adr x1, input
+	mov x2, input_len
+	bl p4w_read
+
+	#add x15, x1, input_len + 8
+	add x15, x1, input_len
+loop:	cmp x15, x1
+	beq continue
+	str xzr, [x15], -8
+	#str xzr, [x15, -8]!
+	#stp xzr, xzr, [x15, -16]!
+	b loop
+
+continue:	
+	#--------------------
+	mov x0, 1
+	ldr x1, =input
+	mov x2, input_len
+	bl p4w_write
+
+	#-----------------------
+	
+
+
+	
+	mov x2, x0
+	mov x0, 1
+	bl p4w_write
+	
+	
+	ldrb w2, [x1]
+	cmp w2, 113
+	beq done
+
+	
+	b _start
+
+done:	
+	mov x0, xzr 
+	bl p4w_exit
+	
+
+prompt:
+        .asciz "2$ "
+	len = . - prompt
+	
+
+.data
+
+input:
+	.fill 1024
+input_end = . - 1
+input_len = 1024
+	
