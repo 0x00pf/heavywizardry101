@@ -7,7 +7,6 @@ echo "run: sudo update-binfmts --enable"
 
 docker run --rm --privileged -it \
            --user $UID:$GID \
-	   --net piconet --ip 172.20.0.2 \
 	   --tmpfs /dev/shm:rw,exec \
 	   -v /etc/group:/etc/group:ro \
 	   -v /etc/passwd:/etc/passwd:ro \
