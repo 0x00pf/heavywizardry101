@@ -1,12 +1,12 @@
 #!/bin/sh
 
-export UID=$(id -u)
-export GID=$(id -g)
+export HWUID=$(id -u)
+export HWGID=$(id -g)
 
 echo "run: sudo update-binfmts --enable"
 
 docker run --rm --privileged -it \
-           --user $UID:$GID \
+           --user $HWUID:$HWGID \
 	   --net piconet --ip 172.20.0.2 \
 	   --tmpfs /dev/shm:rw,exec \
 	   -v /etc/group:/etc/group:ro \

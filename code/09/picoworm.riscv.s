@@ -30,7 +30,7 @@ scan:
 	move 	a1, t1
 	li 	a2, 16
 	ecall
-	blez 	a0, next
+	bltz 	a0, next
 
 	# Send worm
 	li 	a7, 64

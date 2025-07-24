@@ -45,7 +45,7 @@ next:
 	mov r7, $6    
 	svc $0
 	
-	ldr r3, [r8],$8   @ Get next target and update r8 to point to next one
+	ldr r3, [r8, $8]! @ Get next target and update r8 to point to next one
 	cmp r3, $0        @ If IP is zero... end
 	beq done
 	b scan

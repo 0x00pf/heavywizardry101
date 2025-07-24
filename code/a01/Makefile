@@ -1,4 +1,4 @@
-all: x86.hello x86.hi riscv.hello riscv.hi
+all: x86.hello x86.hi riscv.hello riscv.hi 
 
 x86.hello: x86.hello.asm
 	nasm -f elf64 -o $@.o $?
@@ -16,6 +16,7 @@ riscv.hi: riscv.hi.s
 	riscv64-linux-gnu-as -o $@.o $<
 	riscv64-linux-gnu-ld -o $@.raw $@.o -znoseparate-code
 	riscv64-linux-gnu-objcopy -O binary --only-section=.text $@.raw $@
+
 
 clean: 
 	rm -f x86.hello x86.hi riscv.hello riscv.hi riscv.hi.raw *o
