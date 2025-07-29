@@ -16,7 +16,6 @@
 
 
 #define VERSION  "1.0"
-#define PORT     9999
 #define MEM_SIZE 4096
 
 #define DIE(s) {perror (s);exit (EXIT_FAILURE);}
