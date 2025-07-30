@@ -1,5 +1,5 @@
 #!/bin/sh
 #
 
-docker build . -t p4w
+docker build . -t hw101
 

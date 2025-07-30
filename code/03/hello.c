@@ -1,7 +1,7 @@
 #include <unistd.h>
 int main ()
 {
-register void *p = "Hello World!\n";
-write (1, p, 13);
+register void *p = "Hello, world!\n";
+write (1, p, 14);
 _exit (0);
 }

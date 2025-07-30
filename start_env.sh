@@ -12,5 +12,5 @@ docker run --rm --privileged -it \
 	   -v /etc/passwd:/etc/passwd:ro \
 	   -v /etc/shadow:/etc/shadow:ro \
            -v $PWD/code:/opt/code \
-           --name p4w p4w
+           --name hw101 hw101
 

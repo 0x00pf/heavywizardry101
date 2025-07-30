@@ -5,7 +5,8 @@ RUN apt install -y build-essential nasm gcc-arm-linux-gnueabi gcc-aarch64-linux-
 		gcc-riscv64-linux-gnu gcc-x86-64-linux-gnu \
 		vim iproute2 strace netcat-openbsd git \
 		binfmt-support qemu-user-static file \
-		procps  lsof net-tools
+		gdb gdb-multiarch gdbserver \
+		procps lsof net-tools
 
 # Enable execution of dynamic binaries
 run mkdir /etc/qemu-binfmt
