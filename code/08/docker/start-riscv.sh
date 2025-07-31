@@ -17,9 +17,6 @@ do
    ADDR="172.20.0.$i"
    NAME="victim$i"
    echo -n "\"$ADDR\"," >> host.h
-   #echo  docker run --net piconet --ip ${ADDR} -v $PWD/snsr:/opt/snsr --name ${NAME} -it alpine
-   #docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine /opt/snase/snase
-	 #docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine-qemu /opt/snase/run-mips.sh
    docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine-qemu /opt/snase/run-riscv.sh
 done
 echo  -n " NULL};" >> host.h 
