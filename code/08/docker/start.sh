@@ -17,8 +17,8 @@ do
    ADDR="172.20.0.$i"
    NAME="victim$i"
    echo -n "\"$ADDR\"," >> host.h
-   #docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine /opt/snase/snase
-   docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine  /opt/snase/run-x86_64.sh
+   docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine /opt/snase/snase
+   #docker run --rm --net piconet --ip ${ADDR} --security-opt label=disable -v $PWD/snase:/opt/snase --name ${NAME} -d alpine  /opt/snase/run-x86_64.sh
 done
 echo  -n " NULL};" >> host.h 
 # Run the attacker machine
